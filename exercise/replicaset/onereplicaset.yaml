@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+        name: newrs
+        namespace: newns
+spec:
+        replicas: 2
+        selector:
+                matchLabels:
+                        name: frontend
+        template:
+                metadata:
+                        labels:
+                                name: frontend
+                spec:
+                         containers:
+                                 - name: nginx-container
+                                   image: nginx
+
+
+                      

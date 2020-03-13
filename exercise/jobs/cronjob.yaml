@@ -1,0 +1,19 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: pi-cronjob # this is metadata for the cron service
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    metadata:
+      name: pi-job # this is metadata for the job
+    spec:
+      template:
+        metadata:
+          name: pi-pod # this is the metadata for the pod
+        spec:
+          containers:
+          - name: pi
+            image: perl
+            command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(2000)"]
+          restartPolicy: OnFailure

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+        name: threepod
+spec:
+        containers:
+                - name: c3
+                  image: nginx
+                - name: c4
+                  image: centos:6
+                  command: [/bin/sh,-c,'while true; do echo hello;sleep 1; done']
+                - name: c5
+                  image: nginx
+                  ports:
+                          - containerPort: 80
+
+

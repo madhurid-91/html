@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+        name: twopod
+spec:
+        containers:
+                - name: c1
+                  image: nginx
+                - name: c2
+                  image: centos:6
+                  command: [/bin/sh,-c,'while true; do echo hello;sleep 1; done']
+

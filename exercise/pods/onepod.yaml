@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+        name: onepod
+        namespace: madhurid-ns
+spec:
+        containers:
+                -name: c1
+                image: nginx
+
